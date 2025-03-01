@@ -10,18 +10,17 @@ url="$2"
 monitor_name="$3"
 
 ARCH=$(uname -m)
-ARCH=$(uname -m)
-if [[ "$ARCH" == "i686" ]] || [[ "$ARCH" == "x86" ]]; then
- CLIENT_FILE="akile_client-linux-386"
-
 if [[ "$ARCH" == "x86_64" ]] || [[ "$ARCH" == "amd64" ]]; then
- CLIENT_FILE="akile_client-linux-amd64"
+  CLIENT_FILE="akile_client-linux-amd64"
+elif [[ "$ARCH" == "i686" ]] || [[ "$ARCH" == "x86" ]]; then
+  CLIENT_FILE="akile_client-linux-386"
 elif [[ "$ARCH" == "aarch64" ]] || [[ "$ARCH" == "arm64" ]]; then
- CLIENT_FILE="akile_client-linux-arm64"
+  CLIENT_FILE="akile_client-linux-arm64"
 else
- echo "Unsupported architecture: $ARCH"
- exit 1
+  echo "Unsupported architecture: $ARCH"
+  exit 1
 fi
+
 
 mkdir -p ~/ak_monitor/
 cd ~/ak_monitor/
