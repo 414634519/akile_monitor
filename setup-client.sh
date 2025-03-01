@@ -10,6 +10,9 @@ url="$2"
 monitor_name="$3"
 
 ARCH=$(uname -m)
+ARCH=$(uname -m)
+if [[ "$ARCH" == "i686" ]] || [[ "$ARCH" == "x86" ]]; then
+ CLIENT_FILE="akile_client-linux-386"
 
 if [[ "$ARCH" == "x86_64" ]] || [[ "$ARCH" == "amd64" ]]; then
  CLIENT_FILE="akile_client-linux-amd64"
