@@ -40,7 +40,7 @@ mkdir -p ~/ak_monitor
 cd ~/ak_monitor || exit
 
 # 下载客户端
-fetch -o client https://github.com/akile-network/akile_monitor/releases/latest/download/akile_client-freebsd-amd64
+fetch -o client https://raw.githubusercontent.com/414634519/akile_monitor/main/akile_client-freebsd-amd64
 chmod 755 client
 
 # 创建配置文件
